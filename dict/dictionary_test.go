@@ -59,8 +59,7 @@ func TestAdd(t *testing.T) {
 
 func TestUpdate(t *testing.T) {
 	t.Run("update existing key", func(t *testing.T) {
-		d := make(Dictionary)
-		_ = d.Add("A", "B")
+		d := Dictionary{"A": "B"}
 		err := d.Update("A", "C")
 		assertNilErr(t, err)
 		got, _ := d.Search("A")
